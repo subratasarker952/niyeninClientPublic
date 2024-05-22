@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <Product />,
-        // loader: async ({ params }) => await fetch(`https://niyenin-public-server.vercel.app/product/${params.id}`)
+        // loader: async ({ params }) => await fetch(`https://niyenin-server-public.vercel.app/product/${params.id}`)
       },
       {
         path: "/contact",

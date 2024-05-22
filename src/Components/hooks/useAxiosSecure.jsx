@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const axiosSecure = axios.create({
-  baseURL: 'https://niyenin-server-public-iqorhlbz1-tccdcc8gmailcoms-projects.vercel.app',
+  baseURL: 'https://niyenin-server-public.vercel.app',
   // headers: {
   //   authorization: `bearer ${localStorage.getItem('token')}`
   // }
