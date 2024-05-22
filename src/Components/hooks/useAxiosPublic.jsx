@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-    baseURL: 'https://niyenin-public-server.vercel.app',
+    baseURL: 'https://niyenin-server-public-iqorhlbz1-tccdcc8gmailcoms-projects.vercel.app',
 
 })
 
