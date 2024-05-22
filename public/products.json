@@ -1,0 +1,25 @@
+[{
+        "_id": 1,
+        "name": "demo 1",
+        "price": 101,
+        "brand":"N0",
+        "shipping": 50,
+        "oldPrice": 121
+    },
+    {
+        "_id": 2,
+        "name": "demo 2",
+        "price": 102,
+        "brand":"N0",
+        "shipping": 50,
+        "oldPrice": 122
+    },
+    {
+        "_id": 3,
+        "name": "demo 3",
+        "price": 103,
+        "brand":"N0",
+        "shipping": 50,
+        "oldPrice": 123
+    }
+]
