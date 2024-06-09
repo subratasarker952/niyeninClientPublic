@@ -35,14 +35,13 @@ const Shop = () => {
     }
     user && addToCart(product);
   };
-  console.log(filter);
 
   return (
     <div className="flex">
       <div className="hidden md:block md:w-3/12">
         <div>
-          <div className="flex flex-col  gap-3 text-left">
-            <p className="text-xl">Filter</p>
+          <div className="flex flex-col p-2 gap-3 text-left">
+            <p className="text-xl ">Filter</p>
             <hr />
             <p className="btn">Free Delivery</p>
             <p className="btn">Cash on Delivery</p>
@@ -59,8 +58,11 @@ const Shop = () => {
               id=""
               className="border border-pink-500 p-2 rounded-full m-2"
             >
+              <option className="p-1" value="">
+                No filter
+              </option>
               <option className="p-1" value="bestMatch">
-                Best Match
+                Sort By Name
               </option>
               <option className="p-1" value="piceHighToLow">
                 Price High To Low

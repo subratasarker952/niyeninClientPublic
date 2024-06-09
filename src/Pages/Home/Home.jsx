@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
-
+import Banner from "../../Components/HomeComponent/Banner";
+import ProductCategories from "../../Components/HomeComponent/CategorySection/ProductCategories";
+import Service from "../../Components/HomeComponent/Service";
 
 const Home = () => {
-    return (
-        <div>
-            <div>
-                <Link to='/shop' className="btn bg-pink-600 text-white hover:text-black">Continue shopping</Link>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div>
+      <Banner/>
+      <Service/>
+      <ProductCategories/>
+    </div>
+  );
+};
 
 export default Home;
 

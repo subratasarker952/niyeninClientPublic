@@ -3,9 +3,9 @@ import States from "../../../Components/Shared/States/States";
 
 const UserDashboard = () => {
     return (
-        <div className="flex flex-col gap-3 m-3">
+        <div className="flex flex-col gap-3 ml-3">
             {/* head */}
-            <div className="flex gap-4 border">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 border">
                 <States title={"USERS"} percent={"20"} state={'100'} linkTitle={'All users'} link={'/dashboard/users'} icon={<FaUser></FaUser>}  ></States>
                 <States title={"USERS"} percent={"20"} state={'100'} linkTitle={'All users'} link={'/dashboard/users'} icon={<FaUser></FaUser>}  ></States>
                 <States title={"USERS"} percent={"20"} state={'100'} linkTitle={'All users'} link={'/dashboard/users'} icon={<FaUser></FaUser>}  ></States>
