@@ -9,9 +9,10 @@ const Shop = () => {
   const { user } = useAuth();
   const [filter, setFilter] = useState("bestMatch");
   const navigate = useNavigate();
-  const { products } = useProducts(filter);
-
   const { addToCart } = useCart();
+  const { products, productsLoading } = useProducts(filter);
+  if(productsLoading)return <h2 className="text-5xl text-center">Please Wait...</h2>
+
   const handleAddToCart = (product) => {
     if (!user) {
       Swal.fire({
