@@ -40,18 +40,18 @@ const ClientOrdersRow = ({ order, refetchOrders }) => {
 
     return (
         <tr>
-            <td><p>{date.split('T')[0]}</p></td>
-            <td><p>{amount}/=</p></td>
-            <th>
+            <td className="text-center"><p>{date.split('T')[0]}</p></td>
+            <td className="text-center"><p>{amount}/=</p></td>
+            <th className="text-center">
                 <button className="btn btn-sm text-white bg-purple-500">  {products.length} Products</button>
             </th>
-            <td>{orderStatus}</td>
-            <td>{paymentMethod}</td>
-            <th>
+            <td className="text-center">{orderStatus}</td>
+            <td className="text-center">{paymentMethod}</td>
+            <th className="text-center">
                 {!orderStatus &&
-                    <div>
-                        <button onClick={() => handleCashOnDelivery(_id)} className="btn btn-sm text-white bg-purple-500">Cash On delivery</button>
-                        <button onClick={() => handleSslCommerz(_id)} className="btn btn-sm text-white bg-purple-500">Pay Now</button>
+                    <div className="flex">
+                        <button onClick={() => handleCashOnDelivery(_id)} className="btn flex-1 btn-sm text-white bg-purple-500">Hand Cash</button>
+                        <button onClick={() => handleSslCommerz(_id)} className="btn flex-1 btn-sm text-white bg-purple-500">Pay Now</button>
                     </div>
                 }
             </th>
