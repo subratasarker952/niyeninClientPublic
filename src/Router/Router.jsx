@@ -28,6 +28,7 @@ import OrderHistory from "../Pages/User/OrderHistory/OrderHistory";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFail from "../Pages/Payment/PaymentFail";
 import PaymentCancel from "../Pages/Payment/PaymentCancel";
+import About from "../Pages/About/About";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <Product />,
         // loader: async ({ params }) => await fetch(`https://niyenin-server-public.vercel.app/product/${params.id}`)
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/contact",
