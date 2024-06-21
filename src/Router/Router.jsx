@@ -28,6 +28,7 @@ import OrderHistory from "../Pages/User/OrderHistory/OrderHistory";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFail from "../Pages/Payment/PaymentFail";
 import PaymentCancel from "../Pages/Payment/PaymentCancel";
+import About from "../Pages/About/About";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <Product />,
         // loader: async ({ params }) => await fetch(`https://niyenin-server-public.vercel.app/product/${params.id}`)
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/contact",
@@ -72,123 +77,121 @@ const router = createBrowserRouter([
         path: "/payment/cancel",
         element: <PaymentCancel />,
       },
-      {
-        path: "/user",
-        element:
-          <PrivateRoute>
-            <UserDashboardLayout />
-          </PrivateRoute>,
-        children: [
-          {
-            path: "",
-            element: <UserDashboard />
-          },
-          {
-            path: "cart",
-            element: <Cart />
-          },
-          {
-            path: "orderForm",
-            element: < ShippingAddress />
-          },
-          {
-            path: "payments",
-            element: < Payments />
-          },
-          {
-            path: "profile",
-            element: < Profile />
-          },
-          {
-            path: "orders",
-            element: < ClientOrders />
-          },
-          {
-            path: "reviews",
-            element: <Reviews />
-          },
-          {
-            path: "wishlist",
-            element: < Wishlist />
-          },
-          {
-            path: "returns",
-            element: < Returns />
-          },
-          {
-            path: "orderHistory",
-            element: < OrderHistory />
-          },
-          {
-            path: "*",
-            element: <div className="my-6">
-              <h2 className="text-6xl text-pink-500 text-center">404</h2>
-              <h2 className="text-6xl text-pink-500 text-center capitalize">opps! page Not found</h2>
-            </div>
-          }
-        ]
-      },
-
-
-      {
-        path: "/dashboard",
-        element: <PrivateRoute>
-          <AdminOnly>
-            <DashboardLayout />
-          </AdminOnly>
-        </PrivateRoute>,
-        children: [
-          {
-            path: "",
-            element: <Dashboard />
-          },
-          {
-            path: "users",
-            element: <Users />,
-          },
-          {
-            path: "products",
-            element: < Products />,
-          },
-          {
-            path: "orders",
-            element: < Orders />,
-          },
-          {
-            path: "delivery",
-            element: < Delivery />,
-          },
-          {
-            path: "stats",
-            element: <Dashboard />,
-          },
-          {
-            path: "notification",
-            element: < Dashboard />,
-          },
-          {
-            path: "systemHealth",
-            element: < Dashboard />,
-          },
-          {
-            path: "logs",
-            element: < Dashboard />,
-          },
-          {
-            path: "setting",
-            element: < Dashboard />,
-          },
-          {
-            path: "*",
-            element: <div className="my-6">
-              <h2 className="text-6xl text-pink-500 text-center">404</h2>
-              <h2 className="text-6xl text-pink-500 text-center capitalize">opps! page Not found</h2>
-            </div>
-          }
-        ]
-
-      },
     ]
+  },
+  {
+    path: "/user",
+    element:
+      <PrivateRoute>
+        <UserDashboardLayout />
+      </PrivateRoute>,
+    children: [
+      {
+        path: "",
+        element: <UserDashboard />
+      },
+      {
+        path: "cart",
+        element: <Cart />
+      },
+      {
+        path: "orderForm",
+        element: < ShippingAddress />
+      },
+      {
+        path: "payments",
+        element: < Payments />
+      },
+      {
+        path: "profile",
+        element: < Profile />
+      },
+      {
+        path: "orders",
+        element: < ClientOrders />
+      },
+      {
+        path: "reviews",
+        element: <Reviews />
+      },
+      {
+        path: "wishlist",
+        element: < Wishlist />
+      },
+      {
+        path: "returns",
+        element: < Returns />
+      },
+      {
+        path: "orderHistory",
+        element: < OrderHistory />
+      },
+      {
+        path: "*",
+        element: <div className="my-6">
+          <h2 className="text-6xl text-pink-500 text-center">404</h2>
+          <h2 className="text-6xl text-pink-500 text-center capitalize">opps! page Not found</h2>
+        </div>
+      }
+    ]
+  },
+  {
+    path: "/dashboard",
+    element: <PrivateRoute>
+      <AdminOnly>
+        <DashboardLayout />
+      </AdminOnly>
+    </PrivateRoute>,
+    children: [
+      {
+        path: "",
+        element: <Dashboard />
+      },
+      {
+        path: "users",
+        element: <Users />,
+      },
+      {
+        path: "products",
+        element: < Products />,
+      },
+      {
+        path: "orders",
+        element: < Orders />,
+      },
+      {
+        path: "delivery",
+        element: < Delivery />,
+      },
+      {
+        path: "stats",
+        element: <Dashboard />,
+      },
+      {
+        path: "notification",
+        element: < Dashboard />,
+      },
+      {
+        path: "systemHealth",
+        element: < Dashboard />,
+      },
+      {
+        path: "logs",
+        element: < Dashboard />,
+      },
+      {
+        path: "setting",
+        element: < Dashboard />,
+      },
+      {
+        path: "*",
+        element: <div className="my-6">
+          <h2 className="text-6xl text-pink-500 text-center">404</h2>
+          <h2 className="text-6xl text-pink-500 text-center capitalize">opps! page Not found</h2>
+        </div>
+      }
+    ]
+
   },
   {
     path: "*",

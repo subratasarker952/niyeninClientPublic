@@ -16,11 +16,12 @@ const ClientOrders = () => {
                         {/* head */}
                         <thead>
                             <tr>
-                                <th>Date</th>
-                                <th>Amount</th>
-                                <th>Products</th>
-                                <th>Order Status</th>
-                                <th>Action</th>
+                                <th className="text-center font-bold">Date</th>
+                                <th className="text-center font-bold">Amount</th>
+                                <th className="text-center font-bold">Products</th>
+                                <th className="text-center font-bold">Order Status</th>
+                                <th className="text-center font-bold">Action</th>
+                                <th className="text-center font-bold">Payment Option</th>
                             </tr>
                         </thead>
                         <tbody>
