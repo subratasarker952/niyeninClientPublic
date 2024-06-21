@@ -1,10 +1,9 @@
-
 const About = () => {
   return (
     <div>
-        Thak You       
+      <p>thank you</p>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
