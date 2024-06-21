@@ -46,7 +46,7 @@ const Shop = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div className="flex">
         <div className="hidden md:block md:w-3/12">
           <div>
@@ -90,7 +90,7 @@ const Shop = () => {
               </select>
             </div>
           </div>
-          <div className="grid min-h-screen md:shadow-lg md:grid-cols-3 grid-cols-1 gap-3  text-center">
+          <div className="grid md:shadow-lg md:grid-cols-3 grid-cols-1 gap-3  text-center">
             {products?.map((product) => (
               <div
                 key={product._id}
