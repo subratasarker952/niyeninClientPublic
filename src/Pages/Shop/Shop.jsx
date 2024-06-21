@@ -8,9 +8,10 @@ import { useState } from "react";
 const Shop = () => {
   const { user } = useAuth();
   const [filter, setFilter] = useState("bestMatch");
+  const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const { addToCart } = useCart();
-  const { products, productsLoading } = useProducts(filter);
+  const { products, productsLoading } = useProducts(filter, search);
   if (productsLoading)
     return <h2 className="text-5xl text-center">Please Wait...</h2>;
 
@@ -56,6 +57,7 @@ const Shop = () => {
             <div className="w-full">
               <input
                 type="text"
+                onChange={(e)=>setSearch(e.target.value)}
                 placeholder="Search in NiyeNin"
                 className="input input-bordered border-pink-500 w-full"
               />
