@@ -17,7 +17,7 @@ function App() {
       <div>
         <Header />
       </div>
-      <div>
+      <div className='mt-[80px]'>
         <Outlet />
       </div>
       <div>

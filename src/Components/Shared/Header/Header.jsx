@@ -19,17 +19,9 @@ const Header = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
-
-  // const menu = <>
-  //     <NavLink className={'p-2 m-2'} to="/">Home</NavLink>
-  //     <NavLink className={'p-2 m-2'} to="/about">About</NavLink>
-  //     <NavLink className={'p-2 m-2'} to="/contact">Contact</NavLink>
-
-  //     {user && <NavLink className={'p-2 m-2'} to="/dashboard">Dashboard</NavLink>}
-  // </>
   return (
-    <div>
-      <div className="drawer">
+    <div className="">
+      <div className="drawer fixed z-10 left-0 top-0">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
@@ -55,7 +47,7 @@ const Header = () => {
                 </svg>
               </label>
             </div>
-            <div className="flex-1 px-2 mx-2">
+            <div className="flex-1 px-1 mx-1">
               <h1 className="md:text-5xl text-xl text-pink-500">
                 <Link to="/">NiyeNin</Link>
               </h1>

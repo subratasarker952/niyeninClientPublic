@@ -28,7 +28,7 @@ import OrderHistory from "../Pages/User/OrderHistory/OrderHistory";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 import PaymentFail from "../Pages/Payment/PaymentFail";
 import PaymentCancel from "../Pages/Payment/PaymentCancel";
-import About from "../Pages/About/About";
+
 
 
 const router = createBrowserRouter([
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element:<div> <h2>About</h2> </div>,
       },
       {
         path: "/contact",

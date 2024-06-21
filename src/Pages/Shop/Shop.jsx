@@ -1,18 +1,29 @@
 import useAuth from "../../Components/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import useProducts from "../../Components/hooks/useProducts";
 import useCart from "../../Components/Context/CartProvider/useCart";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Shop = () => {
   const { user } = useAuth();
   const [filter, setFilter] = useState("bestMatch");
   const [search, setSearch] = useState("");
+  const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   const { addToCart } = useCart();
-  const { products, productsLoading } = useProducts(filter, search);
-  if (productsLoading)
+  useEffect(() => {
+    fetch(
+      `https://niyenin-server-public.vercel.app/products?filter=${filter}&search=${search}`,{
+        method:'GET',
+        headers:{
+          authorization : `bearer ${localStorage.getItem('token')}`
+        }
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [products, filter]);
+  if (!products)
     return <h2 className="text-5xl text-center">Please Wait...</h2>;
 
   const handleAddToCart = (product) => {
@@ -28,11 +39,6 @@ const Shop = () => {
       }).then((result) => {
         if (result.isConfirmed) {
           return navigate("/login");
-          // Swal.fire({
-          //     title: "Deleted!",
-          //     text: "Your file has been deleted.",
-          //     icon: "success"
-          // });
         }
       });
     }
@@ -57,7 +63,7 @@ const Shop = () => {
             <div className="w-full">
               <input
                 type="text"
-                onChange={(e)=>setSearch(e.target.value)}
+                onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search in NiyeNin"
                 className="input input-bordered border-pink-500 w-full"
               />
@@ -70,7 +76,7 @@ const Shop = () => {
                 className="input input-bordered border-pink-500 p-2 rounded-xl m-2"
               >
                 <option className="" value="">
-                   Sort By
+                  Sort By
                 </option>
                 <option className="" value="bestMatch">
                   Sort By Name
